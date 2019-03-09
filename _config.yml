@@ -4,7 +4,7 @@
 baseurl:
 url: https://lisply.github.io/
 date_format: "ordinal"
-title: LispLY
+title: LispLY's blog
 subtitle: "陆遥的博客"
 description: "陆遥的博客"
 keywords: 陆遥,lisply
@@ -15,7 +15,7 @@ side_bar_repo_limit: 5
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: 陆遥
+author: LispLY
 organization: 
 organization_url: 
 github_username: LispLY
@@ -65,7 +65,7 @@ lsi: false
 quiet: false
 excerpt_separator: "\n\n"
 permalink: /:year/:month/:day/:title/
-gems:
+plugins:
     - jekyll-github-metadata
     - rouge
 #     - jekyll-html-pipeline
