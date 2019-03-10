@@ -1,3 +1,7 @@
+---
+layout: post
+title: 使用 mal ，写一个 Lisp 解释器
+---
 mal 是 GitHub 上的一个开源项目，这是关于它的简单的介绍:[使用75种语言编写一个 Lisp 解释器](https://www.jianshu.com/p/8764dd49ac2d)。
 [这是 mal 语言的语法简介和由 JS 实现的一个在线 repl。](https://kanaka.github.io/mal/)
 

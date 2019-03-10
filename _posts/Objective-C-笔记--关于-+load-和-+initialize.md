@@ -1,3 +1,7 @@
+---
+layout: post
+title: Objective-C 笔记  关于 +load 和 +initialize
+---
 - `+load` 如果不实现的话不会被调用，`initialize` 如果不实现的话会沿继承关系向上查找父类的实现。
 - 两者都会被自动调用，不要手动调用。
 

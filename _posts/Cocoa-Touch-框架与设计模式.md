@@ -1,3 +1,7 @@
+---
+layout: post
+title: Cocoa Touch 框架与设计模式
+---
 
 > Any customer can have a car painted any color that he wants so long as it is black. 
 ——**Henry Ford**, the founder of the Ford Motor Company

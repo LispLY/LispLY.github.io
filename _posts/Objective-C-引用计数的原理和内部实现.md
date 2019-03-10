@@ -1,3 +1,7 @@
+---
+layout: post
+title: Objective-C 引用计数的原理和内部实现
+---
 
 ## 背景 - 内存管理
 Objective-C 建立在 C 语言的基础上。C 语言程序的内存布局主要包括：

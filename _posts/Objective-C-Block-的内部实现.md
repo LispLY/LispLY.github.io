@@ -1,3 +1,7 @@
+---
+layout: post
+title: Objective-C Block 的内部实现
+---
 > 本文内容主要来自于[坂本一树 / 古本智彦：Objective-C高级编程](https://book.douban.com/subject/24720270/)
 
 

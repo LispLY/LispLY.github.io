@@ -1,3 +1,7 @@
+---
+layout: post
+title: Objective-C 自动引用计数（ARC）的原理和内部实现
+---
 > 预备知识：[Objective-C 引用计数的原理和内部实现](https://www.jianshu.com/p/a87242255522)
 
 自动引用计数（ARC）的原理建立在原有的手动引用计数的基础上。

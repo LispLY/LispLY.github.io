@@ -1,3 +1,7 @@
+---
+layout: post
+title: Objective-C 动态创建新类
+---
 在运行时创建新类的流程：
 - 使用 objc_allocateClassPair 创建新类（和元类，这就是函数名叫 objc_allocateClass**Pair** 的原因吧）。
 - 使用 class_addIvar 添加实例变量。
