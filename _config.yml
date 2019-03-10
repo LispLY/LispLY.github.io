@@ -1,8 +1,9 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl:
-url: https://lisply.github.io/
+github: [metadata]
+# baseurl:
+# url: https://lisply.github.io/
 date_format: "ordinal"
 title: LispLY's blog
 subtitle: "陆遥的博客"
