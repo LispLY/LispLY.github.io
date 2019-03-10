@@ -91,7 +91,7 @@ comments_provider: disqus
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
 disqus:
-    username: 陆遥
+    username: https-lisply-github-io-1
 # https://imsun.net/posts/gitment-introduction/
 # gitment:
 #     owner: mzlogin
