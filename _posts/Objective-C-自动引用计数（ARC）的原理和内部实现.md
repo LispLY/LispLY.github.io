@@ -1,0 +1,49 @@
+> 预备知识：[Objective-C 引用计数的原理和内部实现](https://www.jianshu.com/p/a87242255522)
+
+自动引用计数（ARC）的原理建立在原有的手动引用计数的基础上。
+## 所有权修饰符
+在 ARC 条件下，用户通过为变量添加所有权修饰符来代替手动输入 `release` 和 `retain`。
+例如：`id __strong obj = [NSObject new];`
+所有权修饰符共有4种：
+- __strong
+- __weak
+- __unsafe_unretained
+- __autoreleasing
+
+#### __strong
+- 编译器默认会为所有未添加修饰符的 Objective-C 对象类型变量自动添加 __strong 修饰符。
+- 将一个对象赋值给带有 __strong 修饰符的变量时，会自动 `retain` 该对象。
+- 当变量超出作用域时，会自动 `release` 该对象。
+- 当变量被赋值其他对象时，或变量被置为 `nil` 时，会自动 `release` 原对象。
+
+#### __weak
+- __weak 修饰符是为了解决循环引用问题，循环引用会导致[内存泄漏](https://zh.wikipedia.org/wiki/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F) 。
+- __weak 变量不持有它指向的对象。
+- 当 __weak 变量指向的对象被销毁时，__weak 变量会**自动**被设置为 `nil`。
+- 大量使用 __weak 变量可能会造成性能下降。
+
+#### __unsafe_unretained
+- 不持有它指向的对象。
+- 不安全，当 __unsafe_unretained 变量指向的对象被销毁时，会成为[悬垂指针](https://en.wikipedia.org/wiki/Dangling_pointer)。
+
+#### __autoreleasing
+- 一般不显式使用。
+- 函数返回值会被自动加入 autoreleasePool。
+- __weak 变量在使用时会先被加入 autoreleasePool（为了避免使用变量时，对象被销毁）。
+
+##ARC 的内部实现
+ARC 是由编译器和运行时环境共同实现的。
+
+#### __strong 修饰符的实现
+- 由编译器在适当的位置插入 `retain` 和 `release` 代码。
+#### __weak 修饰符的实现
+为实现 __weak 修饰符的功能，系统会维护一个散列表（weak 表）。表的键为对象地址，对应的值为指向这个对象的所有 __weak 变量（可能为 1 或多个）。
+当对象引用计数为 0 时，会自动调用  `dealloc`方法。`dealloc` 方法会做这些事：
+- 从 weak 表中获取被销毁对象的地址为键的记录。
+- 将记录中所有 __weak 变量的地址置为 `nil` 。
+- 从 weak 表中删除该记录。
+- 从引用计数表中删除被销毁对象的地址为键的记录。
+
+> **参考**
+> [官方文档：Advanced Memory Management Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html#//apple_ref/doc/uid/10000011-SW1)
+> [坂本一树 / 古本智彦：Objective-C高级编程](https://book.douban.com/subject/24720270/)
