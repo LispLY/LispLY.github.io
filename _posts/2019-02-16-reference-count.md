@@ -88,8 +88,8 @@ release 会立即使引用计数 -1；autorelease 会将对象注册在 autorele
 
 
 
->  **参考**
-[官方文档：Advanced Memory Management Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html#//apple_ref/doc/uid/10000011-SW1)
-[坂本一树 / 古本智彦：Objective-C高级编程](https://book.douban.com/subject/24720270/)
+>  **参考**  
+>[官方文档：Advanced Memory Management Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html#//apple_ref/doc/uid/10000011-SW1)  
+>[坂本一树 / 古本智彦：Objective-C高级编程](https://book.douban.com/subject/24720270/)
 
 

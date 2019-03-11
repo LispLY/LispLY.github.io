@@ -23,7 +23,7 @@ title: Objective-C 笔记  关于 +load 和 +initialize
 
 
 
-> 参考： 
->  [Effective Objective-C 2.0](https://book.douban.com/subject/25829244/)
-> [Objective-C +load vs +initialize](http://blog.leichunfeng.com/blog/2015/05/02/objective-c-plus-load-vs-plus-initialize/)
+> 参考：   
+>  [Effective Objective-C 2.0](https://book.douban.com/subject/25829244/)  
+> [Objective-C +load vs +initialize](http://blog.leichunfeng.com/blog/2015/05/02/objective-c-plus-load-vs-plus-initialize/)  
 > [iOS中 性能优化之浅谈load与initialize - 韩俊强的博客](https://blog.csdn.net/qq_31810357/article/details/70622276)

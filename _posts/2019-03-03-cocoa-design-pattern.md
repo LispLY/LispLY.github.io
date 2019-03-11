@@ -162,9 +162,9 @@ NSProxy 是一个抽象类，实际上它和 NSObject 一样是个根类（root 
 
 
 
-> **参考：** 
-> [设计模式：可复用面向对象软件的基础](https://book.douban.com/subject/1052241/) 
-[Objective-C编程之道：iOS设计模式解析](https://book.douban.com/subject/6920082/)
+> **参考：**   
+> [设计模式：可复用面向对象软件的基础](https://book.douban.com/subject/1052241/)   
+[Objective-C编程之道：iOS设计模式解析](https://book.douban.com/subject/6920082/)  
 [已过期文档： Cocoa Design Patterns](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaFundamentals/CocoaDesignPatterns/CocoaDesignPatterns.html#//apple_ref/doc/uid/TP40002974-CH6-SW6)
 
 
