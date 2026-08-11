@@ -1,1 +1,87 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>RSA handoff test</title><style>body{font:18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:680px;margin:32px auto;padding:0 20px;line-height:1.5;color:#202124}a.test{display:block;margin:20px 0;padding:16px;border:2px solid #0b57d0;border-radius:12px;text-decoration:none;color:#0b57d0;font-weight:600}code{word-break:break-all;background:#f2f3f5;padding:2px 5px;border-radius:4px}.note{color:#5f6368}</style></head><body><h1>RSA handoff test</h1><p>Success means RSA Authenticator comes to the foreground. An invalid-token or network error afterward is expected: this page tests app handoff only.</p><a class="test" href="com.rsa.securid://ctkip?url=https%3A%2F%2Fexample.invalid%2Fctkip-test">1. Same-tab RSA link</a><a class="test" href="com.rsa.securid://ctkip?url=https%3A%2F%2Fexample.invalid%2Fctkip-test" target="_blank" rel="noopener">2. New-tab RSA link</a><p class="note">The endpoint is the reserved domain <code>example.invalid</code>. This page contains no RSA token, account identifier, script, or analytics.</p></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>RSA handoff test</title>
+  <style>
+    body {
+      color: #202124;
+      font: 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      margin: 32px auto;
+      max-width: 680px;
+      padding: 0 20px;
+    }
+
+    .test {
+      background: #fff;
+      border: 2px solid #0b57d0;
+      border-radius: 12px;
+      box-sizing: border-box;
+      color: #0b57d0;
+      cursor: pointer;
+      display: block;
+      font: inherit;
+      font-weight: 600;
+      margin: 20px 0;
+      padding: 16px;
+      text-align: left;
+      text-decoration: none;
+      width: 100%;
+    }
+
+    code {
+      background: #f2f3f5;
+      border-radius: 4px;
+      padding: 2px 5px;
+      word-break: break-all;
+    }
+
+    .note {
+      color: #5f6368;
+    }
+  </style>
+</head>
+<body>
+  <h1>RSA handoff test</h1>
+  <p>
+    Success means RSA Authenticator comes to the foreground. An invalid-token
+    or network error afterward is expected: this page tests app handoff only.
+  </p>
+
+  <h2>Direct-link controls</h2>
+  <a class="test" href="com.rsa.securid://ctkip?url=https%3A%2F%2Fexample.invalid%2Fctkip-test">
+    1. Control — direct same-tab link
+  </a>
+  <a class="test" href="com.rsa.securid://ctkip?url=https%3A%2F%2Fexample.invalid%2Fctkip-test" target="_blank" rel="noopener">
+    2. Control — direct new-tab link
+  </a>
+
+  <h2>Page-fidelity variants</h2>
+  <button class="test" id="js-same-tab" type="button">
+    3. V1 — JavaScript same tab (location.href)
+  </button>
+  <a class="test" href="./child-webstate-v1-51000001295749.html" target="_blank" rel="opener">
+    4. V2 — child tab → HTTPS bridge → RSA
+  </a>
+
+  <p class="note">
+    The endpoint is the reserved domain <code>example.invalid</code>. This page
+    contains no real RSA token, account identifier, or analytics.
+  </p>
+  <p class="note">Deployment: ICM51000001295749-page-fidelity-v1</p>
+
+  <script>
+    "use strict";
+
+    const rsaDummyUrl =
+      "com.rsa.securid://ctkip?url=https%3A%2F%2Fexample.invalid%2Fctkip-test";
+
+    document.querySelector("#js-same-tab").addEventListener("click", () => {
+      window.location.href = rsaDummyUrl;
+    });
+  </script>
+</body>
+</html>
